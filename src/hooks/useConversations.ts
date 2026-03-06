@@ -18,13 +18,13 @@ export interface Conversation {
 const WELCOME_MESSAGE: Message = {
   id: 1,
   role: "agent",
-  text: "Bienvenue dans ComplianceRAG. Je suis votre assistant spécialisé en conformité réglementaire FINMA. Posez-moi vos questions sur la réglementation bancaire suisse, la LBA, les circulaires FINMA ou tout autre sujet de compliance.",
+  text: "Bienvenue dans RegBridge. Je suis votre assistant spécialisé en conformité réglementaire FINMA. Posez-moi vos questions sur les circulaires, la LBA ou tout autre sujet de compliance bancaire suisse. Je citerai toujours mes sources.",
   sources: [],
 };
 
 const API_URL = "https://granolithic-belletristic-bulah.ngrok-free.dev/question";
 
-const STORAGE_KEY = "compliancerag-conversations";
+const STORAGE_KEY = "regbridge-conversations";
 
 function createNewConversation(): Conversation {
   return {

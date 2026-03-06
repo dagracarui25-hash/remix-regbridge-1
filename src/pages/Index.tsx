@@ -234,7 +234,7 @@ const Index = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Posez votre question de conformité..."
+                  placeholder="Posez votre question FINMA..."
                   disabled={isLoading}
                   className="flex-1 bg-transparent border-none outline-none text-sm text-foreground placeholder:text-muted-foreground/60 py-2.5 font-sans disabled:opacity-50" />
                 
@@ -248,7 +248,7 @@ const Index = () => {
                 </Button>
               </div>
               <p className="text-[10px] text-muted-foreground/40 text-center mt-2 font-mono">
-                ComplianceRAG v1.0 — Les réponses sont générées à titre informatif
+                RegBridge v1.0 — FINMA 🇨🇭
               </p>
             </div>
           </div>
