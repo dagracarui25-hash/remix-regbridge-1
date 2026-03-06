@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect, KeyboardEvent } from "react";
-import { Send, Shield, Sparkles, PanelLeft } from "lucide-react";
+import { Send, Shield, Sparkles, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { ChatSidebar } from "@/components/ChatSidebar";
 import { useConversations } from "@/hooks/useConversations";
+import { useAuth } from "@/hooks/useAuth";
 
 const SUGGESTIONS = [
   "Quelles sont les obligations KYC ?",
@@ -13,6 +14,7 @@ const SUGGESTIONS = [
 ];
 
 const Index = () => {
+  const { signOut } = useAuth();
   const {
     conversations,
     activeConversation,
@@ -86,9 +88,20 @@ const Index = () => {
                   Assistant Conformité FINMA
                 </p>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs text-muted-foreground font-mono">En ligne</span>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <span className="text-xs text-muted-foreground font-mono">En ligne</span>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={signOut}
+                  className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                  title="Se déconnecter"
+                >
+                  <LogOut className="h-4 w-4" />
+                </Button>
               </div>
             </div>
           </header>
