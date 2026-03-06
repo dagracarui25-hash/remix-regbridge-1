@@ -14,6 +14,7 @@ const SUGGESTIONS = [
 ];
 
 const Index = () => {
+  const { signOut } = useAuth();
   const {
     conversations,
     activeConversation,
