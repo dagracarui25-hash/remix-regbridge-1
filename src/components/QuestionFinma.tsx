@@ -57,7 +57,8 @@ export function QuestionFinma({ onError }: QuestionFinmaProps) {
     }
   };
 
-  const showSuggestions = messages.length <= 1 && !isLoading;
+  const lastMsgIsAgent = messages.length > 0 && messages[messages.length - 1].role === "agent";
+  const showSuggestions = (messages.length <= 1 || lastMsgIsAgent) && !isLoading;
 
   return (
     <SidebarProvider>
