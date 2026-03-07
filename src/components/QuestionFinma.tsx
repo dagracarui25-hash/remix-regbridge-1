@@ -11,6 +11,8 @@ const SUGGESTIONS = [
   "Quelles sont les obligations KYC ?",
   "Exigences de fonds propres Bâle III",
   "Règles de gouvernance FINMA",
+  "Obligations en matière de blanchiment (LBA)",
+  "Exigences de reporting prudentiel",
 ];
 
 interface QuestionFinmaProps {
@@ -55,7 +57,8 @@ export function QuestionFinma({ onError }: QuestionFinmaProps) {
     }
   };
 
-  const showSuggestions = messages.length <= 1 && !isLoading;
+  const lastMsgIsAgent = messages.length > 0 && messages[messages.length - 1].role === "agent";
+  const showSuggestions = (messages.length <= 1 || lastMsgIsAgent) && !isLoading;
 
   return (
     <SidebarProvider>
@@ -95,10 +98,10 @@ export function QuestionFinma({ onError }: QuestionFinmaProps) {
                         </div>
                       )}
                       <div
-                        className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                        className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                           msg.role === "user"
-                            ? "gradient-primary text-primary-foreground rounded-br-sm glow-sm"
-                            : "glass rounded-bl-sm"
+                            ? "max-w-[80%] gradient-primary text-primary-foreground rounded-br-sm glow-sm"
+                            : "max-w-full rounded-bl-sm glass"
                         }`}
                       >
                         {msg.role === "agent" ? (
