@@ -255,8 +255,8 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
               ) : (
                 <>
                   <Upload className="h-8 w-8 text-muted-foreground" />
-                  <span className="text-sm font-medium text-muted-foreground">Glissez un PDF ici ou cliquez pour parcourir</span>
-                  <span className="text-xs text-muted-foreground/60">Format accepté : PDF</span>
+                   <span className="text-sm font-medium text-muted-foreground">Glissez un PDF ici ou cliquez pour parcourir</span>
+                   <span className="text-xs text-muted-foreground/60">Format : PDF — Max. {MAX_FILE_SIZE_MB} Mo</span>
                 </>
               )}
             </div>
