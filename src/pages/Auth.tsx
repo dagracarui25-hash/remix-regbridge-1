@@ -171,10 +171,10 @@ const Auth = () => {
           <div className="glass-strong rounded-2xl p-8 space-y-6 border-gradient">
             <div className="text-center">
               <h2 className="text-xl font-bold text-foreground font-display">
-                {isLogin ? t("auth.login") : t("auth.signup")}
+                {forgotPassword ? t("auth.forgotPasswordTitle") : isLogin ? t("auth.login") : t("auth.signup")}
               </h2>
               <p className="text-sm text-muted-foreground mt-1.5">
-                {isLogin ? "Accédez à votre espace compliance" : "Créez votre compte en quelques secondes"}
+                {forgotPassword ? t("auth.forgotPasswordDesc") : isLogin ? t("auth.loginSubtitle") : t("auth.signupSubtitle")}
               </p>
             </div>
 
