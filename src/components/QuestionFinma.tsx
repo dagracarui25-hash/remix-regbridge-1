@@ -208,13 +208,13 @@ export function QuestionFinma({ onError, onServerOnline }: QuestionFinmaProps) {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder={t("chat.placeholder")}
-                  disabled={isLoading}
+                  placeholder={isServerOffline ? t("chat.serverOfflinePlaceholder") : t("chat.placeholder")}
+                  disabled={isLoading || isServerOffline}
                   className="flex-1 bg-transparent border-none outline-none text-sm text-foreground placeholder:text-muted-foreground/60 py-2.5 font-sans disabled:opacity-50"
                 />
                 <Button
                   onClick={() => handleSend()}
-                  disabled={isLoading || !input.trim()}
+                  disabled={isLoading || isServerOffline || !input.trim()}
                   size="sm"
                   className="gradient-primary rounded-lg h-9 px-4 text-primary-foreground hover:opacity-90 transition-opacity glow-sm disabled:opacity-30 disabled:shadow-none"
                 >
