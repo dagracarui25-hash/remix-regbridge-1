@@ -103,7 +103,9 @@
   },
   "error": {
     "banner": "⚠️ Server offline — Starten Sie das Notebook Etape4b in Google Colab neu und aktualisieren Sie die URL in ⚙️ Einstellungen.",
-    "generic": "Ein Fehler ist aufgetreten"
+    "generic": "Ein Fehler ist aufgetreten",
+    "notFound": "⚠️ Der Endpunkt /question-croisee existiert nicht auf dem Server. Stellen Sie sicher, dass das Backend die Kreuzanalyse unterstützt.",
+    "offline": "⚠️ Server nicht erreichbar. Überprüfen Sie, ob das Colab-Notebook aktiv ist und die URL in ⚙️ Einstellungen korrekt ist."
   },
   "footer": {
     "version": "RegBridge v1.0 — FINMA 🇨🇭"

@@ -1,5 +1,5 @@
 import { useState, KeyboardEvent } from "react";
-import { Send, Loader2, Building2, Landmark, GitCompare, Scale, FileSearch } from "lucide-react";
+import { Send, Loader2, Building2, Landmark, GitCompare, Scale, FileSearch, AlertTriangle } from "lucide-react";
 import { FormattedMessage } from "@/components/FormattedMessage";
 import { Button } from "@/components/ui/button";
 import { getApiUrl } from "@/hooks/useApiUrl";
@@ -15,6 +15,8 @@ interface AnalyseCroiseeProps {
   onError: () => void;
 }
 
+type ErrorType = "offline" | "not_found" | null;
+
 const SUGGESTION_CARDS = [
   { icon: Scale, key: "Comparer KYC interne vs FINMA", query: "Compare les obligations KYC internes avec les exigences FINMA" },
   { icon: FileSearch, key: "Analyser la conformité LBA", query: "Analyse la conformité de nos procédures avec la LBA" },
@@ -26,6 +28,7 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<CrossResult | null>(null);
+  const [errorType, setErrorType] = useState<ErrorType>(null);
 
   const handleSend = async (query?: string) => {
     const trimmed = (query || input).trim();
@@ -33,6 +36,7 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
     if (!query) setInput("");
     setLoading(true);
     setResult(null);
+    setErrorType(null);
 
     try {
       const ctrl = new AbortController();
@@ -44,10 +48,15 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
         signal: ctrl.signal,
       });
       clearTimeout(timeout);
+      if (res.status === 404) {
+        setErrorType("not_found");
+        return;
+      }
       if (!res.ok) throw new Error("HTTP error");
       const json = await res.json();
       setResult({ finma: json.finma || null, interne: json.interne || null });
     } catch {
+      setErrorType("offline");
       onError();
     } finally {
       setLoading(false);
@@ -84,6 +93,28 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
             )}
           </AnimatePresence>
 
+          {errorType && !loading && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-2xl mx-auto mb-6"
+            >
+              <div className={`rounded-2xl px-5 py-4 flex items-start gap-3 border ${
+                errorType === "not_found"
+                  ? "bg-accent-gold/10 border-accent-gold/30"
+                  : "bg-destructive/10 border-destructive/30"
+              }`}>
+                <AlertTriangle className={`h-5 w-5 mt-0.5 shrink-0 ${
+                  errorType === "not_found" ? "text-accent-gold" : "text-destructive"
+                }`} />
+                <p className={`text-sm ${
+                  errorType === "not_found" ? "text-accent-gold" : "text-destructive"
+                }`}>
+                  {t(errorType === "not_found" ? "error.notFound" : "error.offline")}
+                </p>
+              </div>
+            </motion.div>
+          )}
           {result && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
