@@ -373,7 +373,12 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
             </div>
           ) : (
             (() => {
-              const filtered = documents.filter((doc) => filterCategory === "Toutes" || doc.categorie === filterCategory);
+              const filtered = documents
+                .filter((doc) => filterCategory === "Toutes" || doc.categorie === filterCategory)
+                .sort((a, b) => {
+                  if (sortBy === "nom") return a.nom_fichier.localeCompare(b.nom_fichier, "fr");
+                  return (b.date_ajout || "").localeCompare(a.date_ajout || "");
+                });
               return filtered.length === 0 ? (
                 <div className="text-center py-8">
                   <p className="text-sm text-muted-foreground">Aucun document dans cette catégorie.</p>
