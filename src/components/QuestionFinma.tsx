@@ -79,7 +79,7 @@ export function QuestionFinma({ onError }: QuestionFinmaProps) {
 
           {/* Chat area */}
           <div className="flex-1 overflow-hidden">
-            <div ref={scrollRef} className="h-full overflow-y-auto px-4 sm:px-8 lg:px-16 py-6">
+            <div ref={scrollRef} className="h-full overflow-y-auto px-4 sm:px-8 lg:px-16 py-6 pb-8">
               <div className="max-w-full space-y-4">
                 <AnimatePresence initial={false}>
                   {messages.map((msg) => (
