@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { AccessCodeModal } from "@/components/AccessCodeModal";
 import { useDocumentAccess } from "@/hooks/useDocumentAccess";
-import { getApiUrl } from "@/hooks/useApiUrl";
+import { supabase } from "@/integrations/supabase/client";
 import { UploadZone } from "@/components/documents/UploadZone";
 import { DocumentLibrary } from "@/components/documents/DocumentLibrary";
 import { Document } from "@/components/documents/types";
