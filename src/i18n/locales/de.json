@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "question": "FINMA-Frage",
+    "analysis": "Kreuzanalyse",
+    "documents": "Interne Dokumente",
+    "online": "Online",
+    "subtitle": "FINMA-Compliance-Assistent"
+  },
+  "docs": {
+    "upload": "Dokument hinzufügen",
+    "send": "Senden",
+    "library": "Dokumentenbibliothek",
+    "refresh": "Aktualisieren",
+    "empty": "Noch kein Dokument indexiert.",
+    "indexed": "Dokument indexiert — {{count}} Chunks erstellt",
+    "search": "Dokument suchen…",
+    "allCategories": "Alle Kategorien",
+    "mostRecent": "Neueste",
+    "nameAZ": "Name A→Z",
+    "dragPdf": "PDF hierher ziehen oder klicken zum Durchsuchen",
+    "formatPdf": "Format: PDF — Max. {{size}} MB",
+    "category": "Kategorie",
+    "clickOrDragToChange": "Klicken oder ziehen zum Ändern",
+    "dropHere": "Datei hier ablegen",
+    "unsupportedFormat": "Format nicht unterstützt. Nur PDF-Dateien werden akzeptiert.",
+    "fileTooLarge": "Datei zu gross ({{size}} MB). Maximum: {{max}} MB.",
+    "uploadError": "Fehler beim Hochladen des Dokuments",
+    "deleteConfirmTitle": "Dieses Dokument löschen?",
+    "deleteConfirmDesc": "<strong>{{name}}</strong> löschen? Diese Aktion ist unwiderruflich.",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "noResults": "Kein Dokument gefunden.",
+    "resultsCount": "{{count}} Ergebnis(se) gefunden",
+    "categories": {
+      "Procédure interne": "Internes Verfahren",
+      "Politique RH": "HR-Richtlinie",
+      "Contrat / Template": "Vertrag / Vorlage",
+      "Règlement interne": "Interne Vorschrift",
+      "Note de direction": "Führungsnotiz",
+      "Compliance interne": "Interne Compliance",
+      "Autre": "Andere"
+    }
+  },
+  "access": {
+    "title": "Geschützter Zugang",
+    "description": "Geben Sie den Zugangscode ein, um interne Dokumente zu verwalten.",
+    "placeholder": "Zugangscode",
+    "incorrectCode": "Falscher Code",
+    "submit": "Zugreifen"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "apiUrl": "API-Server-URL",
+    "test": "Testen",
+    "reset": "Zurücksetzen",
+    "save": "Speichern",
+    "serverOnline": "Server online",
+    "serverOffline": "Server offline"
+  },
+  "chat": {
+    "newConversation": "Neues Gespräch",
+    "history": "Verlauf",
+    "placeholder": "Stellen Sie Ihre FINMA-Frage...",
+    "analyzing": "Analyse läuft",
+    "sources": "Quellen",
+    "today": "Heute",
+    "yesterday": "Gestern"
+  },
+  "cross": {
+    "title": "Kreuzanalyse",
+    "description": "Vergleichen Sie FINMA-Vorschriften mit Ihren internen Verfahren. Stellen Sie unten eine Frage.",
+    "loading": "Kreuzanalyse läuft...",
+    "finmaTitle": "🏛 FINMA-Regulierung",
+    "internalTitle": "🏢 Internes Verfahren",
+    "noFinma": "Keine FINMA-Antwort verfügbar.",
+    "noInternal": "Kein internes Dokument geladen. Fügen Sie Dokumente im Tab <strong>Interne Dokumente</strong> hinzu.",
+    "placeholder": "Stellen Sie Ihre Frage für die Kreuzanalyse...",
+    "page": "Seite {{page}}"
+  },
+  "error": {
+    "banner": "⚠️ Server offline — Starten Sie das Notebook Etape4b in Google Colab neu und aktualisieren Sie die URL in ⚙️ Einstellungen.",
+    "generic": "Ein Fehler ist aufgetreten"
+  },
+  "footer": {
+    "version": "RegBridge v1.0 — FINMA 🇨🇭"
+  },
+  "common": {
+    "logout": "Abmelden",
+    "or": "oder"
+  },
+  "suggestions": {
+    "kyc": "Was sind die KYC-Pflichten?",
+    "basel": "Basel-III-Kapitalanforderungen",
+    "governance": "FINMA-Governance-Regeln",
+    "aml": "Geldwäschereibekämpfung (GwG)",
+    "reporting": "Aufsichtsrechtliche Berichtspflichten"
+  },
+  "auth": {
+    "login": "Anmeldung",
+    "signup": "Konto erstellen",
+    "continueGoogle": "Weiter mit Google",
+    "fullName": "Vollständiger Name",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "loginBtn": "Anmelden",
+    "signupBtn": "Registrieren",
+    "noAccount": "Noch kein Konto?",
+    "alreadyRegistered": "Bereits registriert?",
+    "loginSuccess": "Anmeldung erfolgreich",
+    "checkEmail": "Überprüfen Sie Ihre E-Mail, um Ihre Registrierung zu bestätigen",
+    "subtitle": "FINMA-Compliance-Assistent"
+  }
+}

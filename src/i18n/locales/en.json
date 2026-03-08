@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "question": "Question FINMA",
+    "analysis": "Cross Analysis",
+    "documents": "Internal Documents",
+    "online": "Online",
+    "subtitle": "FINMA Compliance Assistant"
+  },
+  "docs": {
+    "upload": "Add a document",
+    "send": "Send",
+    "library": "Document library",
+    "refresh": "Refresh",
+    "empty": "No document indexed yet.",
+    "indexed": "Document indexed — {{count}} chunks created",
+    "search": "Search a document…",
+    "allCategories": "All categories",
+    "mostRecent": "Most recent",
+    "nameAZ": "Name A→Z",
+    "dragPdf": "Drag a PDF here or click to browse",
+    "formatPdf": "Format: PDF — Max. {{size}} MB",
+    "category": "Category",
+    "clickOrDragToChange": "Click or drag to change",
+    "dropHere": "Drop the file here",
+    "unsupportedFormat": "Unsupported format. Only PDF files are accepted.",
+    "fileTooLarge": "File too large ({{size}} MB). Maximum: {{max}} MB.",
+    "uploadError": "Error uploading the document",
+    "deleteConfirmTitle": "Delete this document?",
+    "deleteConfirmDesc": "Delete <strong>{{name}}</strong>? This action is irreversible.",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "noResults": "No document found.",
+    "resultsCount": "{{count}} result(s) found",
+    "categories": {
+      "Procédure interne": "Internal Procedure",
+      "Politique RH": "HR Policy",
+      "Contrat / Template": "Contract / Template",
+      "Règlement interne": "Internal Regulation",
+      "Note de direction": "Management Note",
+      "Compliance interne": "Internal Compliance",
+      "Autre": "Other"
+    }
+  },
+  "access": {
+    "title": "Protected access",
+    "description": "Enter the access code to manage internal documents.",
+    "placeholder": "Access code",
+    "incorrectCode": "Incorrect code",
+    "submit": "Access"
+  },
+  "settings": {
+    "title": "Settings",
+    "apiUrl": "API server URL",
+    "test": "Test",
+    "reset": "Reset",
+    "save": "Save",
+    "serverOnline": "Server online",
+    "serverOffline": "Server offline"
+  },
+  "chat": {
+    "newConversation": "New conversation",
+    "history": "History",
+    "placeholder": "Ask your FINMA question...",
+    "analyzing": "Analyzing",
+    "sources": "Sources",
+    "today": "Today",
+    "yesterday": "Yesterday"
+  },
+  "cross": {
+    "title": "Cross analysis",
+    "description": "Compare FINMA regulations with your internal procedures. Ask a question below.",
+    "loading": "Cross analysis in progress...",
+    "finmaTitle": "🏛 FINMA Regulation",
+    "internalTitle": "🏢 Internal Procedure",
+    "noFinma": "No FINMA response available.",
+    "noInternal": "No internal document loaded. Add documents in the <strong>Internal Documents</strong> tab.",
+    "placeholder": "Ask your question for cross analysis...",
+    "page": "Page {{page}}"
+  },
+  "error": {
+    "banner": "⚠️ Server offline — Restart the Etape4b notebook in Google Colab and update the URL in ⚙️ Settings.",
+    "generic": "An error occurred"
+  },
+  "footer": {
+    "version": "RegBridge v1.0 — FINMA 🇨🇭"
+  },
+  "common": {
+    "logout": "Log out",
+    "or": "or"
+  },
+  "suggestions": {
+    "kyc": "What are the KYC obligations?",
+    "basel": "Basel III capital requirements",
+    "governance": "FINMA governance rules",
+    "aml": "Anti-money laundering obligations (AML)",
+    "reporting": "Prudential reporting requirements"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Create an account",
+    "continueGoogle": "Continue with Google",
+    "fullName": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Log in",
+    "signupBtn": "Sign up",
+    "noAccount": "Don't have an account?",
+    "alreadyRegistered": "Already registered?",
+    "loginSuccess": "Login successful",
+    "checkEmail": "Check your email to confirm your registration",
+    "subtitle": "FINMA Compliance Assistant"
+  }
+}
