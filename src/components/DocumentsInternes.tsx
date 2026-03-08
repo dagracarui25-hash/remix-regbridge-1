@@ -342,6 +342,14 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
                   <option key={c} value={c}>{c}</option>
                 ))}
               </select>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as "date" | "nom")}
+                className="bg-secondary/50 border border-border rounded-lg px-2.5 py-1.5 text-xs text-foreground outline-none focus:border-primary/40 transition-colors"
+              >
+                <option value="date">Plus récent</option>
+                <option value="nom">Nom A→Z</option>
+              </select>
               <Button
                 onClick={fetchDocuments}
                 disabled={loadingDocs}
