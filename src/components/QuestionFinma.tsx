@@ -10,20 +10,27 @@ import { useTranslation } from "react-i18next";
 
 interface QuestionFinmaProps {
   onError: () => void;
+  onServerOnline?: () => void;
 }
 
-export function QuestionFinma({ onError }: QuestionFinmaProps) {
+export function QuestionFinma({ onError, onServerOnline }: QuestionFinmaProps) {
   const { t } = useTranslation();
   const {
     conversations,
     activeConversation,
     activeId,
     isLoading,
+    isServerOffline,
     setActiveId,
     createConversation,
     deleteConversation,
     sendMessage,
-  } = useConversations({ onError });
+    recheckServer,
+  } = useConversations({ 
+    onError,
+    onServerOffline: onError,
+    onServerOnline,
+  });
 
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
