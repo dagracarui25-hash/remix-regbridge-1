@@ -12,7 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { getApiUrl } from "@/hooks/useApiUrl";
+import { supabase } from "@/integrations/supabase/client";
 import { Document, CATEGORIES, CATEGORY_COLORS } from "./types";
 import { useTranslation } from "react-i18next";
 
