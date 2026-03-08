@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 
 const Index = () => {
   const { signOut } = useAuth();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [showError, setShowError] = useState(false);
   const [activeTab, setActiveTab] = useState("question");
