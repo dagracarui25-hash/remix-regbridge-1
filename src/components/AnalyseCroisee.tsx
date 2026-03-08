@@ -56,6 +56,21 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
   const [result, setResult] = useState<CrossResult | null>(null);
   const [errorType, setErrorType] = useState<ErrorType>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  const handleExportPDF = async () => {
+    if (!resultRef.current) return;
+    const html2pdf = (await import("html2pdf.js")).default;
+    html2pdf()
+      .set({
+        margin: [10, 10, 10, 10],
+        filename: "analyse-croisee.pdf",
+        html2canvas: { scale: 2, backgroundColor: "#1a1a2e" },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      })
+      .from(resultRef.current)
+      .save();
+  };
 
   const handleSend = async (query?: string) => {
     const trimmed = (query || input).trim();
