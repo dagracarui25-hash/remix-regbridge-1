@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
+import { AuthBackground } from "@/components/AuthBackground";
 
 const Auth = () => {
   const { t } = useTranslation();
