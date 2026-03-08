@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "question": "Domanda FINMA",
+    "analysis": "Analisi incrociata",
+    "documents": "Documenti interni",
+    "online": "Online",
+    "subtitle": "Assistente Conformità FINMA"
+  },
+  "docs": {
+    "upload": "Aggiungi un documento",
+    "send": "Invia",
+    "library": "Libreria documenti",
+    "refresh": "Aggiorna",
+    "empty": "Nessun documento indicizzato al momento.",
+    "indexed": "Documento indicizzato — {{count}} chunk creati",
+    "search": "Cerca un documento…",
+    "allCategories": "Tutte le categorie",
+    "mostRecent": "Più recente",
+    "nameAZ": "Nome A→Z",
+    "dragPdf": "Trascina un PDF qui o clicca per sfogliare",
+    "formatPdf": "Formato: PDF — Max. {{size}} MB",
+    "category": "Categoria",
+    "clickOrDragToChange": "Clicca o trascina per cambiare",
+    "dropHere": "Rilascia il file qui",
+    "unsupportedFormat": "Formato non supportato. Solo file PDF accettati.",
+    "fileTooLarge": "File troppo grande ({{size}} MB). Massimo: {{max}} MB.",
+    "uploadError": "Errore durante il caricamento del documento",
+    "deleteConfirmTitle": "Eliminare questo documento?",
+    "deleteConfirmDesc": "Eliminare <strong>{{name}}</strong>? Questa azione è irreversibile.",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "noResults": "Nessun documento trovato.",
+    "resultsCount": "{{count}} risultato/i trovato/i",
+    "categories": {
+      "Procédure interne": "Procedura interna",
+      "Politique RH": "Politica HR",
+      "Contrat / Template": "Contratto / Modello",
+      "Règlement interne": "Regolamento interno",
+      "Note de direction": "Nota di direzione",
+      "Compliance interne": "Compliance interna",
+      "Autre": "Altro"
+    }
+  },
+  "access": {
+    "title": "Accesso protetto",
+    "description": "Inserisci il codice di accesso per gestire i documenti interni.",
+    "placeholder": "Codice di accesso",
+    "incorrectCode": "Codice errato",
+    "submit": "Accedi"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "apiUrl": "URL del server API",
+    "test": "Testa",
+    "reset": "Ripristina",
+    "save": "Salva",
+    "serverOnline": "Server online",
+    "serverOffline": "Server offline"
+  },
+  "chat": {
+    "newConversation": "Nuova conversazione",
+    "history": "Cronologia",
+    "placeholder": "Fai la tua domanda FINMA...",
+    "analyzing": "Analisi in corso",
+    "sources": "Fonti",
+    "today": "Oggi",
+    "yesterday": "Ieri"
+  },
+  "cross": {
+    "title": "Analisi incrociata",
+    "description": "Confronta le normative FINMA con le tue procedure interne. Fai una domanda qui sotto.",
+    "loading": "Analisi incrociata in corso...",
+    "finmaTitle": "🏛 Normativa FINMA",
+    "internalTitle": "🏢 Procedura interna",
+    "noFinma": "Nessuna risposta FINMA disponibile.",
+    "noInternal": "Nessun documento interno caricato. Aggiungi documenti nella scheda <strong>Documenti interni</strong>.",
+    "placeholder": "Fai la tua domanda per l'analisi incrociata...",
+    "page": "Pagina {{page}}"
+  },
+  "error": {
+    "banner": "⚠️ Server offline — Riavvia il notebook Etape4b in Google Colab e aggiorna l'URL in ⚙️ Impostazioni.",
+    "generic": "Si è verificato un errore"
+  },
+  "footer": {
+    "version": "RegBridge v1.0 — FINMA 🇨🇭"
+  },
+  "common": {
+    "logout": "Disconnetti",
+    "or": "o"
+  },
+  "suggestions": {
+    "kyc": "Quali sono gli obblighi KYC?",
+    "basel": "Requisiti patrimoniali Basilea III",
+    "governance": "Regole di governance FINMA",
+    "aml": "Obblighi antiriciclaggio (LRD)",
+    "reporting": "Requisiti di reporting prudenziale"
+  },
+  "auth": {
+    "login": "Accesso",
+    "signup": "Crea un account",
+    "continueGoogle": "Continua con Google",
+    "fullName": "Nome completo",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Accedi",
+    "signupBtn": "Registrati",
+    "noAccount": "Non hai un account?",
+    "alreadyRegistered": "Già registrato?",
+    "loginSuccess": "Accesso riuscito",
+    "checkEmail": "Controlla la tua email per confermare la registrazione",
+    "subtitle": "Assistente Conformità FINMA"
+  }
+}

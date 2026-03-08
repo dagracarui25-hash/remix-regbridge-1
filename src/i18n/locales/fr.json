@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "question": "Question FINMA",
+    "analysis": "Analyse croisée",
+    "documents": "Documents internes",
+    "online": "En ligne",
+    "subtitle": "Assistant Conformité FINMA"
+  },
+  "docs": {
+    "upload": "Ajouter un document",
+    "send": "Envoyer",
+    "library": "Bibliothèque de documents",
+    "refresh": "Rafraîchir",
+    "empty": "Aucun document indexé pour le moment.",
+    "indexed": "Document indexé — {{count}} chunks créés",
+    "search": "Rechercher un document…",
+    "allCategories": "Toutes les catégories",
+    "mostRecent": "Plus récent",
+    "nameAZ": "Nom A→Z",
+    "dragPdf": "Glissez un PDF ici ou cliquez pour parcourir",
+    "formatPdf": "Format : PDF — Max. {{size}} Mo",
+    "category": "Catégorie",
+    "clickOrDragToChange": "Cliquez ou glissez pour changer",
+    "dropHere": "Déposez le fichier ici",
+    "unsupportedFormat": "Format non supporté. Seuls les fichiers PDF sont acceptés.",
+    "fileTooLarge": "Fichier trop volumineux ({{size}} Mo). Maximum : {{max}} Mo.",
+    "uploadError": "Erreur lors de l'upload du document",
+    "deleteConfirmTitle": "Supprimer ce document ?",
+    "deleteConfirmDesc": "Supprimer <strong>{{name}}</strong> ? Cette action est irréversible.",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "noResults": "Aucun document trouvé.",
+    "resultsCount": "{{count}} résultat(s) trouvé(s)",
+    "categories": {
+      "Procédure interne": "Procédure interne",
+      "Politique RH": "Politique RH",
+      "Contrat / Template": "Contrat / Template",
+      "Règlement interne": "Règlement interne",
+      "Note de direction": "Note de direction",
+      "Compliance interne": "Compliance interne",
+      "Autre": "Autre"
+    }
+  },
+  "access": {
+    "title": "Accès protégé",
+    "description": "Entrez le code d'accès pour gérer les documents internes.",
+    "placeholder": "Code d'accès",
+    "incorrectCode": "Code incorrect",
+    "submit": "Accéder"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "apiUrl": "URL du serveur API",
+    "test": "Tester",
+    "reset": "Réinitialiser",
+    "save": "Sauvegarder",
+    "serverOnline": "Serveur en ligne",
+    "serverOffline": "Serveur hors ligne"
+  },
+  "chat": {
+    "newConversation": "Nouvelle conversation",
+    "history": "Historique",
+    "placeholder": "Posez votre question FINMA...",
+    "analyzing": "Analyse en cours",
+    "sources": "Sources",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier"
+  },
+  "cross": {
+    "title": "Analyse croisée",
+    "description": "Comparez la réglementation FINMA avec vos procédures internes. Posez une question ci-dessous.",
+    "loading": "Analyse croisée en cours...",
+    "finmaTitle": "🏛 Réglementation FINMA",
+    "internalTitle": "🏢 Procédure interne",
+    "noFinma": "Aucune réponse FINMA disponible.",
+    "noInternal": "Aucun document interne chargé. Ajoutez des documents dans l'onglet <strong>Documents internes</strong>.",
+    "placeholder": "Posez votre question pour l'analyse croisée...",
+    "page": "Page {{page}}"
+  },
+  "error": {
+    "banner": "⚠️ Serveur hors ligne — Relancez le notebook Etape4b dans Google Colab et mettez à jour l'URL dans ⚙️ Paramètres.",
+    "generic": "Une erreur est survenue"
+  },
+  "footer": {
+    "version": "RegBridge v1.0 — FINMA 🇨🇭"
+  },
+  "common": {
+    "logout": "Se déconnecter",
+    "or": "ou"
+  },
+  "suggestions": {
+    "kyc": "Quelles sont les obligations KYC ?",
+    "basel": "Exigences de fonds propres Bâle III",
+    "governance": "Règles de gouvernance FINMA",
+    "aml": "Obligations en matière de blanchiment (LBA)",
+    "reporting": "Exigences de reporting prudentiel"
+  },
+  "auth": {
+    "login": "Connexion",
+    "signup": "Créer un compte",
+    "continueGoogle": "Continuer avec Google",
+    "fullName": "Nom complet",
+    "email": "Email",
+    "password": "Mot de passe",
+    "loginBtn": "Se connecter",
+    "signupBtn": "S'inscrire",
+    "noAccount": "Pas encore de compte ?",
+    "alreadyRegistered": "Déjà inscrit ?",
+    "loginSuccess": "Connexion réussie",
+    "checkEmail": "Vérifiez votre email pour confirmer votre inscription",
+    "subtitle": "Assistant Conformité FINMA"
+  }
+}
