@@ -31,7 +31,7 @@ export function AccessCodeModal({ onAuthenticate }: AccessCodeModalProps) {
   };
 
   return (
-    <div className="flex-1 flex items-center justify-center p-8">
+    <div className="absolute inset-0 flex items-center justify-center p-8">
       <div className="glass-strong rounded-2xl p-8 max-w-sm w-full text-center space-y-5">
         <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
           <Lock className="h-7 w-7 text-primary" />
