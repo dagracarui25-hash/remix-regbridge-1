@@ -229,7 +229,16 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
                 ref={fileRef}
                 type="file"
                 accept=".pdf"
-                onChange={(e) => { setSelectedFile(e.target.files?.[0] || null); setUploadResult(null); }}
+                onChange={(e) => {
+                  const f = e.target.files?.[0] || null;
+                  if (f && f.size > MAX_FILE_SIZE) {
+                    setUploadResult({ ok: false, message: `❌ Fichier trop volumineux (${(f.size / 1024 / 1024).toFixed(1)} Mo). Maximum : ${MAX_FILE_SIZE_MB} Mo.` });
+                    setSelectedFile(null);
+                  } else {
+                    setSelectedFile(f);
+                    setUploadResult(null);
+                  }
+                }}
                 className="hidden"
               />
               {isDragging ? (
