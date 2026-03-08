@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Shield, LogOut, MessageSquare, GitCompare, FolderOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Shield, LogOut, MessageSquare, GitCompare, FolderOpen, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SettingsDrawer } from "@/components/SettingsDrawer";
@@ -14,6 +15,7 @@ import { useTranslation } from "react-i18next";
 
 const Index = () => {
   const { signOut } = useAuth();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [showError, setShowError] = useState(false);
   const [activeTab, setActiveTab] = useState("question");
@@ -53,6 +55,15 @@ const Index = () => {
               </span>
             </div>
             <RegulationsDrawer />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => navigate("/about")}
+              className="h-8 w-8 text-muted-foreground hover:text-accent-cyan transition-colors"
+              title="Documentation"
+            >
+              <HelpCircle className="h-4 w-4" />
+            </Button>
             <LanguageSelector />
             <SettingsDrawer />
             <Button
