@@ -364,6 +364,18 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
             </div>
           </div>
 
+          {/* Search bar */}
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Rechercher un document…"
+              className="w-full bg-secondary/50 border border-border rounded-xl pl-9 pr-3 py-2 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary/40 transition-colors"
+            />
+          </div>
+
           {loadingDocs && documents.length === 0 ? (
             <div className="flex justify-center py-8">
               <Loader2 className="h-6 w-6 text-primary animate-spin" />
@@ -376,6 +388,7 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
             (() => {
               const filtered = documents
                 .filter((doc) => filterCategory === "Toutes" || doc.categorie === filterCategory)
+                .filter((doc) => !searchQuery || doc.nom_fichier.toLowerCase().includes(searchQuery.toLowerCase()))
                 .sort((a, b) => {
                   if (sortBy === "nom") return a.nom_fichier.localeCompare(b.nom_fichier, "fr");
                   return (b.date_ajout || "").localeCompare(a.date_ajout || "");
