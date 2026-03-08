@@ -152,6 +152,40 @@ serve(async (req) => {
       console.log(`Sample payload: ${JSON.stringify(truncated)}`);
     }
 
+    // Normalize metadata: ensure all points have proper document/filename fields
+    for (const p of points) {
+      const pl = p.payload || {};
+      if (!pl.document || pl.document === "Document inconnu") {
+        // Try to find filename from various fields
+        const candidates = [
+          pl.filename, pl.nom_fichier, pl.file_name, pl.name,
+        ];
+        // Check source field (LangChain path style)
+        if (pl.source && typeof pl.source === "string" && pl.source !== "regbridge-upload") {
+          const parts = String(pl.source).replace(/\\/g, "/").split("/");
+          const last = parts[parts.length - 1];
+          if (last && last.length > 0) candidates.unshift(last);
+        }
+        // Check nested metadata
+        const meta = pl.metadata as Record<string, unknown> | undefined;
+        if (meta && typeof meta === "object") {
+          for (const key of ["source", "filename", "file_name", "document", "title"]) {
+            const val = meta[key];
+            if (val && typeof val === "string") {
+              const parts = String(val).replace(/\\/g, "/").split("/");
+              candidates.unshift(parts[parts.length - 1] || String(val));
+            }
+          }
+        }
+        const found = candidates.find(c => c && typeof c === "string" && c.length > 0);
+        if (found) {
+          pl.document = found;
+          pl.filename = found;
+          pl.nom_fichier = found;
+        }
+      }
+    }
+
     // Extract texts - try multiple field names
     const texts = points.map((p: any) => {
       const pl = p.payload || {};
