@@ -97,14 +97,46 @@ async function searchQdrant(qdrantUrl: string, apiKey: string, collection: strin
   return data.result || [];
 }
 
+function extractDocumentName(payload: Record<string, unknown>): string {
+  // Try direct fields first
+  for (const key of ["document", "filename", "nom_fichier", "file_name", "name"]) {
+    const val = payload[key];
+    if (val && typeof val === "string" && val.length > 0 && val !== "Document inconnu") return val;
+  }
+  // Try source field (LangChain style: could be a file path)
+  const source = payload.source as string | undefined;
+  if (source && typeof source === "string" && source.length > 0 && source !== "regbridge-upload") {
+    // Extract filename from path (e.g., "/path/to/file.pdf" → "file.pdf")
+    const parts = source.replace(/\\/g, "/").split("/");
+    const last = parts[parts.length - 1];
+    if (last && last.includes(".")) return last;
+    if (last && last.length > 0) return last;
+    return source;
+  }
+  // Try nested metadata (LangChain / Colab common patterns)
+  const metadata = payload.metadata as Record<string, unknown> | undefined;
+  if (metadata && typeof metadata === "object") {
+    for (const key of ["source", "filename", "file_name", "document", "title", "name"]) {
+      const val = metadata[key];
+      if (val && typeof val === "string" && val.length > 0) {
+        const parts = String(val).replace(/\\/g, "/").split("/");
+        const last = parts[parts.length - 1];
+        return last && last.length > 0 ? last : String(val);
+      }
+    }
+  }
+  return "Document inconnu";
+}
+
 function extractContext(results: QdrantSearchResult[]): { text: string; sources: { document: string; page: number }[] } {
   const sources: { document: string; page: number }[] = [];
   const texts: string[] = [];
   for (const r of results) {
     const payload = r.payload || {};
-    const content = (payload.page_content || payload.text || payload.content || payload.chunk || "") as string;
-    const doc = (payload.document || payload.filename || payload.source || payload.nom_fichier || "Document inconnu") as string;
-    const page = (payload.page || payload.page_number || 1) as number;
+    const content = (payload.page_content || payload.text || payload.content || payload.chunk || payload.chunk_text || "") as string;
+    const doc = extractDocumentName(payload);
+    const metadata = payload.metadata as Record<string, unknown> | undefined;
+    const page = (payload.page || payload.page_number || metadata?.page || metadata?.page_number || 1) as number;
     if (content) {
       texts.push(content);
       if (!sources.find(s => s.document === doc && s.page === page)) {
