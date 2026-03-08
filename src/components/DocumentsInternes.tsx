@@ -363,36 +363,43 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
               <p className="text-sm text-muted-foreground">Aucun document indexé pour le moment.</p>
             </div>
           ) : (
-            <div className="space-y-2">
-              {documents
-                .filter((doc) => filterCategory === "Toutes" || doc.categorie === filterCategory)
-                .map((doc) => (
-                <motion.div
-                  key={doc.nom_fichier}
-                  layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="flex items-center gap-3 bg-secondary/30 rounded-xl px-4 py-3"
-                >
-                  <span className="text-lg">📄</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-foreground truncate">{doc.nom_fichier}</p>
-                  </div>
-                  <span className={`text-[11px] font-medium px-2.5 py-1 rounded-full ${CATEGORY_COLORS[doc.categorie] || CATEGORY_COLORS["Autre"]}`}>
-                    {doc.categorie}
-                  </span>
-                  <Button
-                    onClick={() => setDeleteTarget(doc.nom_fichier)}
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8 text-muted-foreground hover:text-destructive shrink-0"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                </motion.div>
-              ))}
-            </div>
+            (() => {
+              const filtered = documents.filter((doc) => filterCategory === "Toutes" || doc.categorie === filterCategory);
+              return filtered.length === 0 ? (
+                <div className="text-center py-8">
+                  <p className="text-sm text-muted-foreground">Aucun document dans cette catégorie.</p>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {filtered.map((doc) => (
+                    <motion.div
+                      key={doc.nom_fichier}
+                      layout
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="flex items-center gap-3 bg-secondary/30 rounded-xl px-4 py-3"
+                    >
+                      <span className="text-lg">📄</span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-foreground truncate">{doc.nom_fichier}</p>
+                      </div>
+                      <span className={`text-[11px] font-medium px-2.5 py-1 rounded-full ${CATEGORY_COLORS[doc.categorie] || CATEGORY_COLORS["Autre"]}`}>
+                        {doc.categorie}
+                      </span>
+                      <Button
+                        onClick={() => setDeleteTarget(doc.nom_fichier)}
+                        variant="ghost"
+                        size="icon"
+                        className="h-8 w-8 text-muted-foreground hover:text-destructive shrink-0"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </motion.div>
+                  ))}
+                </div>
+              );
+            })()
           )}
         </div>
       </div>
