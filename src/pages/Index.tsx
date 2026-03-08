@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Shield, LogOut, MessageSquare, GitCompare, FolderOpen } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { SettingsDrawer } from "@/components/SettingsDrawer";
 import { ErrorBanner } from "@/components/ErrorBanner";
 import { QuestionFinma } from "@/components/QuestionFinma";
@@ -16,6 +16,7 @@ const Index = () => {
   const { signOut } = useAuth();
   const { t } = useTranslation();
   const [showError, setShowError] = useState(false);
+  const [activeTab, setActiveTab] = useState("question");
 
   const handleError = () => setShowError(true);
   const handleServerOnline = () => setShowError(false);
@@ -68,48 +69,50 @@ const Index = () => {
       </header>
 
       {/* Tabs */}
-      <Tabs defaultValue="question" className="flex-1 flex flex-col overflow-hidden relative z-0">
+      <div className="flex-1 flex flex-col overflow-hidden relative z-0">
         <div className="flex-shrink-0 glass-strong border-b border-white/[0.04]">
           <div className="max-w-6xl mx-auto px-2 sm:px-4">
-            <TabsList className="bg-transparent h-auto p-0 gap-0 w-full">
-              <TabsTrigger
-                value="question"
-                className="data-[state=active]:bg-transparent data-[state=active]:text-foreground text-muted-foreground rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:shadow-[0_2px_8px_-2px_hsl(var(--primary)/0.5)] flex-1 sm:flex-none px-2 sm:px-5 py-3 text-xs sm:text-sm gap-1.5 sm:gap-2 min-w-0 transition-all duration-200"
-              >
-                <MessageSquare className="h-4 w-4 shrink-0" />
-                <span className="hidden sm:inline font-display font-medium">{t("nav.question")}</span>
-                <span className="sm:hidden truncate font-display">FINMA</span>
-              </TabsTrigger>
-              <TabsTrigger
-                value="croisee"
-                className="data-[state=active]:bg-transparent data-[state=active]:text-foreground text-muted-foreground rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:shadow-[0_2px_8px_-2px_hsl(var(--primary)/0.5)] flex-1 sm:flex-none px-2 sm:px-5 py-3 text-xs sm:text-sm gap-1.5 sm:gap-2 min-w-0 transition-all duration-200"
-              >
-                <GitCompare className="h-4 w-4 shrink-0" />
-                <span className="hidden sm:inline font-display font-medium">{t("nav.analysis")}</span>
-                <span className="sm:hidden truncate font-display">{t("nav.analysis")}</span>
-              </TabsTrigger>
-              <TabsTrigger
-                value="documents"
-                className="data-[state=active]:bg-transparent data-[state=active]:text-foreground text-muted-foreground rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:shadow-[0_2px_8px_-2px_hsl(var(--primary)/0.5)] flex-1 sm:flex-none px-2 sm:px-5 py-3 text-xs sm:text-sm gap-1.5 sm:gap-2 min-w-0 transition-all duration-200"
-              >
-                <FolderOpen className="h-4 w-4 shrink-0" />
-                <span className="hidden sm:inline font-display font-medium">{t("nav.documents")}</span>
-                <span className="sm:hidden truncate font-display">{t("nav.documents")}</span>
-              </TabsTrigger>
-            </TabsList>
+            <div className="flex h-auto p-0 gap-0 w-full">
+              {[
+                { value: "question", icon: MessageSquare, label: t("nav.question"), mobileLabel: "FINMA" },
+                { value: "croisee", icon: GitCompare, label: t("nav.analysis"), mobileLabel: t("nav.analysis") },
+                { value: "documents", icon: FolderOpen, label: t("nav.documents"), mobileLabel: t("nav.documents") },
+              ].map((tab) => (
+                <button
+                  key={tab.value}
+                  onClick={() => setActiveTab(tab.value)}
+                  className={`flex items-center justify-center flex-1 sm:flex-none px-2 sm:px-5 py-3 text-xs sm:text-sm gap-1.5 sm:gap-2 min-w-0 transition-all duration-200 border-b-2 ${
+                    activeTab === tab.value
+                      ? "text-foreground border-primary shadow-[0_2px_8px_-2px_hsl(var(--primary)/0.5)]"
+                      : "text-muted-foreground border-transparent hover:text-foreground/70"
+                  }`}
+                >
+                  <tab.icon className="h-4 w-4 shrink-0" />
+                  <span className="hidden sm:inline font-display font-medium">{tab.label}</span>
+                  <span className="sm:hidden truncate font-display">{tab.mobileLabel}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        <TabsContent value="question" className="flex-1 flex flex-col overflow-hidden mt-0 ring-0 focus-visible:ring-0">
-          <QuestionFinma onError={handleError} onServerOnline={handleServerOnline} />
-        </TabsContent>
-        <TabsContent value="croisee" className="flex-1 flex flex-col overflow-hidden mt-0 ring-0 focus-visible:ring-0">
-          <AnalyseCroisee onError={handleError} />
-        </TabsContent>
-        <TabsContent value="documents" className="flex-1 flex flex-col overflow-hidden mt-0 ring-0 focus-visible:ring-0">
-          <DocumentsInternes onError={handleError} />
-        </TabsContent>
-      </Tabs>
+        <div className="flex-1 flex flex-col overflow-hidden relative">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="flex-1 flex flex-col overflow-hidden absolute inset-0"
+            >
+              {activeTab === "question" && <QuestionFinma onError={handleError} onServerOnline={handleServerOnline} />}
+              {activeTab === "croisee" && <AnalyseCroisee onError={handleError} />}
+              {activeTab === "documents" && <DocumentsInternes onError={handleError} />}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
 
       {/* Footer */}
       <div className="flex-shrink-0 text-center py-1.5 relative z-10">
