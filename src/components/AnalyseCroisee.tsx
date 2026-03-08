@@ -2,7 +2,7 @@ import { useState, KeyboardEvent } from "react";
 import { Send, Loader2, Building2, Landmark, GitCompare, Scale, FileSearch, AlertTriangle } from "lucide-react";
 import { FormattedMessage } from "@/components/FormattedMessage";
 import { Button } from "@/components/ui/button";
-import { getApiUrl } from "@/hooks/useApiUrl";
+import { supabase } from "@/integrations/supabase/client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
