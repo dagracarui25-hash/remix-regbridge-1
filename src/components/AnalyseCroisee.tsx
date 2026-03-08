@@ -28,6 +28,7 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<CrossResult | null>(null);
+  const [errorType, setErrorType] = useState<ErrorType>(null);
 
   const handleSend = async (query?: string) => {
     const trimmed = (query || input).trim();
@@ -35,6 +36,7 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
     if (!query) setInput("");
     setLoading(true);
     setResult(null);
+    setErrorType(null);
 
     try {
       const ctrl = new AbortController();
@@ -46,10 +48,15 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
         signal: ctrl.signal,
       });
       clearTimeout(timeout);
+      if (res.status === 404) {
+        setErrorType("not_found");
+        return;
+      }
       if (!res.ok) throw new Error("HTTP error");
       const json = await res.json();
       setResult({ finma: json.finma || null, interne: json.interne || null });
     } catch {
+      setErrorType("offline");
       onError();
     } finally {
       setLoading(false);
