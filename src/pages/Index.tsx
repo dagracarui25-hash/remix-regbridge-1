@@ -51,6 +51,7 @@ const Index = () => {
                 {showError ? t("nav.offline") : t("nav.online")}
               </span>
             </div>
+            <RegulationsDrawer />
             <LanguageSelector />
             <SettingsDrawer />
             <Button
