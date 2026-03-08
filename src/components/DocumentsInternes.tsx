@@ -55,6 +55,7 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
   const { isAuthenticated, authenticate, validateSession } = useDocumentAccess();
   const [documents, setDocuments] = useState<Document[]>([]);
   const [loadingDocs, setLoadingDocs] = useState(false);
+  const [filterCategory, setFilterCategory] = useState<string>("Toutes");
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadResult, setUploadResult] = useState<{ ok: boolean; message: string } | null>(null);
