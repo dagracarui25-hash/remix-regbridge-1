@@ -383,6 +383,11 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
                       <span className="text-lg">📄</span>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-foreground truncate">{doc.nom_fichier}</p>
+                        {doc.date_ajout && (
+                          <p className="text-[11px] text-muted-foreground mt-0.5">
+                            {new Date(doc.date_ajout).toLocaleDateString("fr-CH", { day: "numeric", month: "short", year: "numeric" })}
+                          </p>
+                        )}
                       </div>
                       <span className={`text-[11px] font-medium px-2.5 py-1 rounded-full ${CATEGORY_COLORS[doc.categorie] || CATEGORY_COLORS["Autre"]}`}>
                         {doc.categorie}
