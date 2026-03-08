@@ -3,7 +3,7 @@ import { Upload, FileText, Loader2, CheckCircle, XCircle, X } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { motion, AnimatePresence } from "framer-motion";
-import { getApiUrl } from "@/hooks/useApiUrl";
+import { supabase } from "@/integrations/supabase/client";
 import { CATEGORIES, MAX_FILE_SIZE, MAX_FILE_SIZE_MB } from "./types";
 import { useTranslation } from "react-i18next";
 
