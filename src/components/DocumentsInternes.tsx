@@ -364,7 +364,9 @@ export function DocumentsInternes({ onError }: DocumentsInternesProps) {
             </div>
           ) : (
             <div className="space-y-2">
-              {documents.map((doc) => (
+              {documents
+                .filter((doc) => filterCategory === "Toutes" || doc.categorie === filterCategory)
+                .map((doc) => (
                 <motion.div
                   key={doc.nom_fichier}
                   layout
