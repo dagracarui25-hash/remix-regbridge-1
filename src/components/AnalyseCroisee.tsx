@@ -340,6 +340,7 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
                   <div className="text-sm text-muted-foreground bg-secondary/30 rounded-xl p-4" dangerouslySetInnerHTML={{ __html: t("cross.noInternal") }} />
                 )}
               </div>
+              </div>
             </motion.div>
           )}
 
