@@ -96,7 +96,7 @@ export function ChatSidebar({ conversations, activeId, onSelect, onCreate, onDel
                       )}
                     </SidebarMenuButton>
                     {!collapsed && (
-                      <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-2 bg-[#1E293B] text-white text-xs rounded-md whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-200 pointer-events-none z-50 max-w-[280px] break-words">
+                      <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-2 bg-[#0F172A] border border-[#334155] text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-150 pointer-events-none z-[9999] max-w-[280px] break-words" style={{ wordWrap: 'break-word' }}>
                         {conv.title}
                       </div>
                     )}
