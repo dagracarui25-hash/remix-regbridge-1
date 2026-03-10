@@ -41,7 +41,7 @@ export function ChatSidebar({ conversations, activeId, onSelect, onCreate, onDel
   }
 
   return (
-    <Sidebar collapsible="icon" className="border-r border-white/[0.06] z-[1] overflow-hidden">
+    <Sidebar collapsible="icon" className="border-r border-white/[0.06] z-[1]">
       <SidebarHeader className="p-3">
         {!collapsed && (
           <div className="flex items-center gap-2.5 mb-4 px-1">
@@ -88,7 +88,7 @@ export function ChatSidebar({ conversations, activeId, onSelect, onCreate, onDel
                       <MessageSquare className={`h-4 w-4 shrink-0 ${isActive ? "text-primary" : ""}`} />
                       {!collapsed && (
                         <div className="flex flex-col min-w-0 flex-1">
-                          <span className="truncate text-xs font-medium">{conv.title}</span>
+                          <span className="truncate text-xs font-medium" title={conv.title}>{conv.title}</span>
                           <span className="text-[10px] text-muted-foreground/50 font-mono">
                             {formatDate(conv.updatedAt)} · {msgCount} msg
                           </span>
@@ -96,7 +96,7 @@ export function ChatSidebar({ conversations, activeId, onSelect, onCreate, onDel
                       )}
                     </SidebarMenuButton>
                     {!collapsed && (
-                      <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-2 bg-[#1E293B] text-white text-xs rounded-md whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-200 pointer-events-none z-50 max-w-[280px] break-words">
+                      <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-2 bg-[#0F172A] border border-[#334155] text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-150 pointer-events-none z-[9999] max-w-[280px] break-words" style={{ wordWrap: 'break-word' }}>
                         {conv.title}
                       </div>
                     )}
