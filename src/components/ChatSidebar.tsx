@@ -88,7 +88,7 @@ export function ChatSidebar({ conversations, activeId, onSelect, onCreate, onDel
                       <MessageSquare className={`h-4 w-4 shrink-0 ${isActive ? "text-primary" : ""}`} />
                       {!collapsed && (
                         <div className="flex flex-col min-w-0 flex-1">
-                          <span className="truncate text-xs font-medium">{conv.title}</span>
+                          <span className="truncate text-xs font-medium" title={conv.title}>{conv.title}</span>
                           <span className="text-[10px] text-muted-foreground/50 font-mono">
                             {formatDate(conv.updatedAt)} · {msgCount} msg
                           </span>
