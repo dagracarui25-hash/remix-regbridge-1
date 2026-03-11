@@ -61,12 +61,14 @@
   "chat": {
     "newConversation": "New conversation",
     "history": "History",
-    "placeholder": "Ask your FINMA question...",
+    "placeholder": "Ask your compliance question...",
     "serverOfflinePlaceholder": "Server offline — configure URL in Settings",
     "analyzing": "Analyzing",
     "sources": "Sources",
     "today": "Today",
-    "yesterday": "Yesterday"
+    "yesterday": "Yesterday",
+    "welcome": "Welcome to RegBridge. I am your assistant specialised in FINMA regulatory compliance. Ask me your questions about circulars, AML or any other Swiss banking compliance topic. I will always cite my sources.",
+    "noResponse": "No response."
   },
   "cross": {
     "title": "Cross analysis",
