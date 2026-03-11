@@ -21,11 +21,7 @@ interface AnalyseCroiseeProps {
 
 type ErrorType = "offline" | "not_found" | "rate_limit" | "credits" | null;
 
-const SUGGESTION_CARDS = [
-  { icon: Scale, key: "Comparer KYC interne vs FINMA", query: "Compare les obligations KYC internes avec les exigences FINMA" },
-  { icon: FileSearch, key: "Analyser la conformité LBA", query: "Analyse la conformité de nos procédures avec la LBA" },
-  { icon: GitCompare, key: "Vérifier les procédures CDB", query: "Vérifie la conformité de nos procédures CDB avec les circulaires FINMA" },
-];
+// Moved inside component to access t()
 
 const STREAM_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/question-croisee`;
 
@@ -50,6 +46,13 @@ function splitResponse(fullText: string): { finma: string; interne: string } {
 
 export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
   const { t } = useTranslation();
+
+  const SUGGESTION_CARDS = [
+    { icon: Scale, key: t("cross.suggestKyc"), query: t("cross.suggestKycQuery") },
+    { icon: FileSearch, key: t("cross.suggestLba"), query: t("cross.suggestLbaQuery") },
+    { icon: GitCompare, key: t("cross.suggestCdb"), query: t("cross.suggestCdbQuery") },
+  ];
+
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [streaming, setStreaming] = useState(false);
@@ -189,7 +192,7 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
         interne: interne
           ? { reponse: interne, sources: interneSources }
           : interneSources.length > 0
-            ? { reponse: "Les documents internes ont été consultés mais aucun écart spécifique n'a été identifié.", sources: interneSources }
+            ? { reponse: t("cross.noGapFound"), sources: interneSources }
             : null,
       });
     } catch (e: any) {
@@ -334,7 +337,7 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
                   </>
                 ) : streaming ? (
                   <div className="flex items-center gap-2 py-4">
-                    <span className="text-sm text-muted-foreground/60">En attente…</span>
+                    <span className="text-sm text-muted-foreground/60">{t("cross.waiting")}</span>
                   </div>
                 ) : (
                   <div className="text-sm text-muted-foreground bg-secondary/30 rounded-xl p-4" dangerouslySetInnerHTML={{ __html: t("cross.noInternal") }} />

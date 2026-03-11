@@ -61,12 +61,14 @@
   "chat": {
     "newConversation": "Neues Gespräch",
     "history": "Verlauf",
-    "placeholder": "Stellen Sie Ihre FINMA-Frage...",
+    "placeholder": "Stellen Sie Ihre Compliance-Frage...",
     "serverOfflinePlaceholder": "Server offline — URL in Einstellungen konfigurieren",
     "analyzing": "Analyse läuft",
     "sources": "Quellen",
     "today": "Heute",
-    "yesterday": "Gestern"
+    "yesterday": "Gestern",
+    "welcome": "Willkommen bei RegBridge. Ich bin Ihr Assistent für FINMA-regulatorische Compliance. Stellen Sie mir Ihre Fragen zu Rundschreiben, GwG oder jedem anderen Thema der Schweizer Banken-Compliance. Ich werde immer meine Quellen angeben.",
+    "noResponse": "Keine Antwort."
   },
   "cross": {
     "title": "Kreuzanalyse",
@@ -78,7 +80,15 @@
     "noInternal": "Kein internes Dokument geladen. Fügen Sie Dokumente im Tab <strong>Interne Dokumente</strong> hinzu.",
     "placeholder": "Stellen Sie Ihre Frage für die Kreuzanalyse...",
     "page": "Seite {{page}}",
-    "exportPdf": "Als PDF exportieren"
+    "exportPdf": "Als PDF exportieren",
+    "waiting": "Wartend…",
+    "suggestKyc": "Internes KYC vs FINMA vergleichen",
+    "suggestKycQuery": "Vergleiche die internen KYC-Pflichten mit den FINMA-Anforderungen",
+    "suggestLba": "GwG-Konformität analysieren",
+    "suggestLbaQuery": "Analysiere die Konformität unserer Verfahren mit dem GwG",
+    "suggestCdb": "CDB-Verfahren prüfen",
+    "suggestCdbQuery": "Prüfe die Konformität unserer CDB-Verfahren mit den FINMA-Rundschreiben",
+    "noGapFound": "Die internen Dokumente wurden konsultiert, aber es wurde keine spezifische Abweichung festgestellt."
   },
   "regs": {
     "button": "Regulierungen",

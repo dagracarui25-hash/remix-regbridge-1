@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { getApiUrl } from "@/hooks/useApiUrl";
+import i18n from "@/i18n";
 
 export interface Message {
   id: number;
@@ -16,20 +17,22 @@ export interface Conversation {
   updatedAt: number;
 }
 
-const WELCOME_MESSAGE: Message = {
-  id: 1,
-  role: "agent",
-  text: "Bienvenue dans RegBridge. Je suis votre assistant spécialisé en conformité réglementaire FINMA. Posez-moi vos questions sur les circulaires, la LBA ou tout autre sujet de compliance bancaire suisse. Je citerai toujours mes sources.",
-  sources: [],
-};
+function getWelcomeMessage(): Message {
+  return {
+    id: 1,
+    role: "agent",
+    text: i18n.t("chat.welcome"),
+    sources: [],
+  };
+}
 
 const STORAGE_KEY = "regbridge-conversations";
 
 function createNewConversation(): Conversation {
   return {
     id: crypto.randomUUID(),
-    title: "Nouvelle conversation",
-    messages: [{ ...WELCOME_MESSAGE }],
+    title: i18n.t("chat.newConversation"),
+    messages: [getWelcomeMessage()],
     createdAt: Date.now(),
     updatedAt: Date.now(),
   };
@@ -217,7 +220,7 @@ export function useConversations(options: UseConversationsOptions = {}) {
         const agentMsg: Message = {
           id: nextId.current++,
           role: "agent",
-          text: json.reponse || "Pas de réponse.",
+          text: json.reponse || i18n.t("chat.noResponse"),
           sources,
         };
         setData((prev) => ({

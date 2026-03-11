@@ -61,12 +61,14 @@
   "chat": {
     "newConversation": "Nouvelle conversation",
     "history": "Historique",
-    "placeholder": "Posez votre question FINMA...",
+    "placeholder": "Posez votre question de conformité...",
     "serverOfflinePlaceholder": "Serveur hors ligne — configurez l'URL dans Paramètres",
     "analyzing": "Analyse en cours",
     "sources": "Sources",
     "today": "Aujourd'hui",
-    "yesterday": "Hier"
+    "yesterday": "Hier",
+    "welcome": "Bienvenue dans RegBridge. Je suis votre assistant spécialisé en conformité réglementaire FINMA. Posez-moi vos questions sur les circulaires, la LBA ou tout autre sujet de compliance bancaire suisse. Je citerai toujours mes sources.",
+    "noResponse": "Pas de réponse."
   },
   "cross": {
     "title": "Analyse croisée",
@@ -78,7 +80,15 @@
     "noInternal": "Aucun document interne chargé. Ajoutez des documents dans l'onglet <strong>Documents internes</strong>.",
     "placeholder": "Posez votre question pour l'analyse croisée...",
     "page": "Page {{page}}",
-    "exportPdf": "Exporter en PDF"
+    "exportPdf": "Exporter en PDF",
+    "waiting": "En attente…",
+    "suggestKyc": "Comparer KYC interne vs FINMA",
+    "suggestKycQuery": "Compare les obligations KYC internes avec les exigences FINMA",
+    "suggestLba": "Analyser la conformité LBA",
+    "suggestLbaQuery": "Analyse la conformité de nos procédures avec la LBA",
+    "suggestCdb": "Vérifier les procédures CDB",
+    "suggestCdbQuery": "Vérifie la conformité de nos procédures CDB avec les circulaires FINMA",
+    "noGapFound": "Les documents internes ont été consultés mais aucun écart spécifique n'a été identifié."
   },
   "regs": {
     "button": "Réglementations",

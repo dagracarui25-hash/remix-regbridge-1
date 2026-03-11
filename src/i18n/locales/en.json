@@ -61,12 +61,14 @@
   "chat": {
     "newConversation": "New conversation",
     "history": "History",
-    "placeholder": "Ask your FINMA question...",
+    "placeholder": "Ask your compliance question...",
     "serverOfflinePlaceholder": "Server offline — configure URL in Settings",
     "analyzing": "Analyzing",
     "sources": "Sources",
     "today": "Today",
-    "yesterday": "Yesterday"
+    "yesterday": "Yesterday",
+    "welcome": "Welcome to RegBridge. I am your assistant specialised in FINMA regulatory compliance. Ask me your questions about circulars, AML or any other Swiss banking compliance topic. I will always cite my sources.",
+    "noResponse": "No response."
   },
   "cross": {
     "title": "Cross analysis",
@@ -78,7 +80,15 @@
     "noInternal": "No internal document loaded. Add documents in the <strong>Internal Documents</strong> tab.",
     "placeholder": "Ask your question for cross analysis...",
     "page": "Page {{page}}",
-    "exportPdf": "Export as PDF"
+    "exportPdf": "Export as PDF",
+    "waiting": "Waiting…",
+    "suggestKyc": "Compare internal KYC vs FINMA",
+    "suggestKycQuery": "Compare internal KYC obligations with FINMA requirements",
+    "suggestLba": "Analyze AML compliance",
+    "suggestLbaQuery": "Analyze the compliance of our procedures with AML regulations",
+    "suggestCdb": "Verify CDB procedures",
+    "suggestCdbQuery": "Verify the compliance of our CDB procedures with FINMA circulars",
+    "noGapFound": "Internal documents were consulted but no specific gap was identified."
   },
   "regs": {
     "button": "Regulations",
