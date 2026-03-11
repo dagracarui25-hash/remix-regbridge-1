@@ -87,7 +87,8 @@
     "suggestLba": "Analyze AML compliance",
     "suggestLbaQuery": "Analyze the compliance of our procedures with AML regulations",
     "suggestCdb": "Verify CDB procedures",
-    "suggestCdbQuery": "Verify the compliance of our CDB procedures with FINMA circulars"
+    "suggestCdbQuery": "Verify the compliance of our CDB procedures with FINMA circulars",
+    "noGapFound": "Internal documents were consulted but no specific gap was identified."
   },
   "regs": {
     "button": "Regulations",

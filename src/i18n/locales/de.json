@@ -87,7 +87,8 @@
     "suggestLba": "GwG-Konformität analysieren",
     "suggestLbaQuery": "Analysiere die Konformität unserer Verfahren mit dem GwG",
     "suggestCdb": "CDB-Verfahren prüfen",
-    "suggestCdbQuery": "Prüfe die Konformität unserer CDB-Verfahren mit den FINMA-Rundschreiben"
+    "suggestCdbQuery": "Prüfe die Konformität unserer CDB-Verfahren mit den FINMA-Rundschreiben",
+    "noGapFound": "Die internen Dokumente wurden konsultiert, aber es wurde keine spezifische Abweichung festgestellt."
   },
   "regs": {
     "button": "Regulierungen",

@@ -192,7 +192,7 @@ export function AnalyseCroisee({ onError }: AnalyseCroiseeProps) {
         interne: interne
           ? { reponse: interne, sources: interneSources }
           : interneSources.length > 0
-            ? { reponse: "Les documents internes ont été consultés mais aucun écart spécifique n'a été identifié.", sources: interneSources }
+            ? { reponse: t("cross.noGapFound"), sources: interneSources }
             : null,
       });
     } catch (e: any) {

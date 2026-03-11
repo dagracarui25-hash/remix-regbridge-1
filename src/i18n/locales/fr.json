@@ -87,7 +87,8 @@
     "suggestLba": "Analyser la conformité LBA",
     "suggestLbaQuery": "Analyse la conformité de nos procédures avec la LBA",
     "suggestCdb": "Vérifier les procédures CDB",
-    "suggestCdbQuery": "Vérifie la conformité de nos procédures CDB avec les circulaires FINMA"
+    "suggestCdbQuery": "Vérifie la conformité de nos procédures CDB avec les circulaires FINMA",
+    "noGapFound": "Les documents internes ont été consultés mais aucun écart spécifique n'a été identifié."
   },
   "regs": {
     "button": "Réglementations",
