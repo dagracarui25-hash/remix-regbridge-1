@@ -61,12 +61,14 @@
   "chat": {
     "newConversation": "Nouvelle conversation",
     "history": "Historique",
-    "placeholder": "Posez votre question FINMA...",
+    "placeholder": "Posez votre question de conformité...",
     "serverOfflinePlaceholder": "Serveur hors ligne — configurez l'URL dans Paramètres",
     "analyzing": "Analyse en cours",
     "sources": "Sources",
     "today": "Aujourd'hui",
-    "yesterday": "Hier"
+    "yesterday": "Hier",
+    "welcome": "Bienvenue dans RegBridge. Je suis votre assistant spécialisé en conformité réglementaire FINMA. Posez-moi vos questions sur les circulaires, la LBA ou tout autre sujet de compliance bancaire suisse. Je citerai toujours mes sources.",
+    "noResponse": "Pas de réponse."
   },
   "cross": {
     "title": "Analyse croisée",
