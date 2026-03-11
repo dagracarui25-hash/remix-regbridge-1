@@ -61,12 +61,14 @@
   "chat": {
     "newConversation": "Neues Gespräch",
     "history": "Verlauf",
-    "placeholder": "Stellen Sie Ihre FINMA-Frage...",
+    "placeholder": "Stellen Sie Ihre Compliance-Frage...",
     "serverOfflinePlaceholder": "Server offline — URL in Einstellungen konfigurieren",
     "analyzing": "Analyse läuft",
     "sources": "Quellen",
     "today": "Heute",
-    "yesterday": "Gestern"
+    "yesterday": "Gestern",
+    "welcome": "Willkommen bei RegBridge. Ich bin Ihr Assistent für FINMA-regulatorische Compliance. Stellen Sie mir Ihre Fragen zu Rundschreiben, GwG oder jedem anderen Thema der Schweizer Banken-Compliance. Ich werde immer meine Quellen angeben.",
+    "noResponse": "Keine Antwort."
   },
   "cross": {
     "title": "Kreuzanalyse",
