@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { getApiUrl } from "@/hooks/useApiUrl";
+import i18n from "@/i18n";
 
 export interface Message {
   id: number;
